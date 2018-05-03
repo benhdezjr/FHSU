@@ -21,7 +21,7 @@ $message ='
 </head>
 <body>
 <h2>Need a loaner longer than two weeks or more than 2? Submit an Asset Request on Request IT!</h2>
-<button><a href="http://requestit.garmin.com/">Request IT</a></button>
+<button><a href="http://buy.company.com/">Request IT</a></button>
 
 </body>
 </html>';
