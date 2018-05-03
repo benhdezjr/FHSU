@@ -10,7 +10,7 @@
 <?PHP
 
 if (isset($_POST['send'])){
-  $to = 'ITSD_NoReply@garmin.com';
+  $to = 'email@email.com';
   $subject ='Walk Up Assistance';
   $Name = 'Name: ' . $_POST['Name'];
   $Category = 'Category: ' . $_POST['helpCategory'];
