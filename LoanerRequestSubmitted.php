@@ -17,7 +17,7 @@
 <?PHP
 
 if (isset($_POST['send'])){
-$to = 'ITSD_NoReply@garmin.com';
+$to = 'email@email.com';
 $subject ='Loaner Request';
 $Name = 'Name: ' . $_POST['Name'];
 $DN = 'Date Needed: ' . $_POST['DateNeeded'];
