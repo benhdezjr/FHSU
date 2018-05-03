@@ -1,0 +1,492 @@
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<head>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="style.css">
+
+
+
+
+
+<!--- Landing Page --->
+
+<div id="header"></div>
+<div id="header2"></div>
+<h1  id="mainTitle"> Service Desk Portal </h1>
+<h1  id="mainTitle2" style="display:none;"> Service Desk Portal </h1>
+<div id="textBody">
+<div id="textBody2">
+<div id="startText" type="button" class="btn btn-outline-primary">Click Here to begin</div>
+
+<!--- Main Questions --->
+<h2  id="IntroText" class="titleFont" style="display:none;"> How can we help you? </h2>
+<!-- Loaner Request -->
+<div id="div1" type="button" class="btn btn-outline-primary" style="display: none;">Loaner Request</div>
+
+<!-- Need Help? -->
+<div id="div3" type="button" class="btn btn-outline-success" style="display: none;">Need help with an issue?</div>
+
+
+<!-- Questions for Stock Request -->
+<div id="stockQuestion1" style="display:none;">
+<div class="titleFont">Are you requesting one of these items: </div>
+<div class="disclaimer">Monitor, Screen Privacy Protector, Desktop ,Laptop etc.</div>
+<div id="stockYes" type="button" class="btn btn-outline-primary" >Yes</div>
+<div id="stockNo" type="button" class="btn btn-outline-secondary">No</div>
+</div>
+<!--- Request IT Email Link   --->
+
+<div id="emailLink" style="display:none;">Ok, we can help you with this, you just need to submit a request by going to Requestit.garmin.com. We can email you the link if you want. Just type in your email address below
+<form id="emailForm" text-align:" left:" class="formStandard" action="AssetRequest.php" method="Post">
+<input type="email"  class="form-control is-valid" id="validationServer01" aria-describedby="emailHelp" placeholder="first.lastname@garmin.com" name="email"  required >
+<input type="Submit"  name="send" value="Send me a Link" onclick="clearform();" class="btn btn-primary" type="button">
+</form>
+</div>
+
+
+<!-- Loaner Request (Longer than two weeks)-->
+<div id="text-disclaimer02" style="display:none;">
+<div class="disclaimer"><b>Please note:</b> This may take a few days to process, you will be notified when its ready via email.</div>
+<div id="div100" class="titleFont">Great, we can help you with that!</div>
+<div id="text-disclaimerQ" type="button" class="btn btn-outline-primary" style="margin-top: 30px;">OK, I got it!</div>
+<div id="text-disclaimerQ2" type="button" class="btn btn-outline-secondary" style="margin-top: 30px;">I will just need 2 weeks</div>
+</div>
+<!--Loaner Request End-->
+
+
+<div id="div21" class="titleFont" style="display:none;">Ok, looks like you need to submit an Asset Request.</div>
+<div id="text-disclaimer04" style="display:none;">Please Note: Purchase Request can take up to 33 business days. </div>
+
+<div id="div13" style="display:none;">Great, we can help you <br> <button>Sumbit a Request</button></div>
+
+<div id="walkupAssistanceQuestions" style="display:none;">
+<h3 id="titleFont">Select what you need help with</h3>
+<button id="walkupAssistanceButton" type="button" class="btn btn-secondary">Walk Up Assistance</button>
+</div>
+
+<!--- walk up --->
+<div id="walkUpAssistance">
+  <form id="walkUpAssistanceForm" class="formStandard" action="walkup.php" method="Post">
+
+<div id="walkup0" style="display:none;">
+  <h3>What do you need help with?</h3>
+    <select class="form-control" id="exampleFormControlSelect1" name="helpCategory" value="0" required>
+      <option>Hardware</option>
+      <option>Software</option>
+      <option>Computer Accessory</option>
+      <option>My Account keeps getting locked out</option>
+      <option>Other</option>
+    </select>
+    <small id="emailHelp" class="form-text text-muted"></small>
+    <button id="walkUpAssistanceNextButton0" class="btn btn-secondary">Next</button>
+</div>
+
+<div id="walkup1" style="display:none;">
+  <div class="form-group"style="margin-top:20px;">
+    <label for="yourName"><h3>Anything else you want to tell us? </h3></label>
+    <textarea class="form-control" id="yourName" rows="3" name="Comments"></textarea>
+  </div>
+<button id="walkUpAssistanceNextButton1"class="btn btn-secondary">Next</button>
+</div>
+
+<div id="walkup2" style="display:none">
+  <h3>What is your name?</h3>
+  <div class="form-group">
+    <input type="name" class="form-control is-valid" id="validationServer01" aria-describedby="emailHelp" placeholder="First and Last Name" name="Name"  required>
+  </div>
+
+<input type="Submit"  name="send" value="Submit" onclick="clearform();" class="btn btn-primary" type="button">
+</div>
+</form>
+</div>
+
+<div class="dropdown" style="display: none;">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Start Here</button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">Walk Up Help</a>
+    <a class="dropdown-item" href="#">Stock Item Request</a>
+    <a class="dropdown-item" href="#">Asset Request</a>
+  </div>
+</div>
+
+<!--Loaner Request FAQ Text -->
+
+<div id="div5" style="display: none;">Do you need it longer than 2 weeks?</div>
+
+<div id="loanerYes" type="button" class="btn btn-outline-primary" style="display: none;">Yes</div>
+<div id="divNo" type="button" class="btn btn-outline-secondary"  style="display: none;">No</div>
+<div id="div7" type="button" class="btn btn-outline-secondary"  style="display: none;">Ok</div>
+</div>
+
+<!--- Loaner Request (PR Link)--->
+
+<div id="LoanerPR" style="display:none;">
+<h2 class="titleFont">We can email you the link</h2>
+<form id="emailForm" text-align:" left:" class="formStandard" action="LoanerPR.php" method="Post">
+<input type="email"  class="form-control is-valid" id="validationServer01" aria-describedby="emailHelp" placeholder="first.lastname@garmin.com" name="email"  required >
+<input type="Submit"  name="send" value="Send me a Link" onclick="clearform();" class="btn btn-primary" type="button">
+</form>
+</div>
+
+
+
+</div>
+
+<!------- Loaner Request Form --->
+
+
+
+<div id="formBox" style="display:none;">
+<form id="actionButton03" style="display:none; text-align: left:" class="formStandard" action="LoanerRequestSubmitted.php" method="Post">
+  <div class="form-group">
+    <h3>Who is requesting this?</h3>
+    <label for="validationServer01" id="formName" value="Mark">Your Name</label>
+    <input type="name" class="form-control is-valid" id="validationServer01" aria-describedby="emailHelp" placeholder="First and Last Name" name="Name"  required>
+  </div>
+  <button id="loanerNextButton0" class="btn btn-secondary">Next</button>
+</div>
+
+<div id="formBox2" style="display:none;">
+  <div class="row">
+    <div class="col">
+       <label for="exampleInputEmail1">When do you need it?</label>
+       <input type="date" id="datepicker" class="form-control"aria-describedby="emailHelp" placeholder="When do you need it by" name="DateNeeded" value="Mark" required>
+  </div>
+
+  <div class="col">
+  <label for="exampleInputEmail1">When are you returning it?</label>
+  <input type="date" id="datepicker" class="form-control"aria-describedby="emailHelp" placeholder="When do you need it by" name="DateReturned" value="Mark" required>
+  </div>
+</div>
+  <button id="loanerNextButton1" class="btn btn-secondary">Next</button>
+</div>
+<div id="formBox3" style="display:none;">
+  <div class="form-group" style="margin-top:20px;">
+    <label for="exampleFormControlSelect1">What Operating System do you need?</label>
+    <select class="form-control" id="exampleFormControlSelect1" name="OS" value="Mark" required>
+      <option>Windows 7</option>
+      <option>Windows 10</option>
+      <option>Mac OS</option>
+    </select>
+  </div>
+  <button id="loanerNextButton2" class="btn btn-secondary">Next</button>
+</div>
+<div id="formBox4" style="display:none;">
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">How many do you need? </label>
+    <select class="form-control" id="exampleFormControlSelect1" name="HowMany" value="Mark" required>
+      <option>1</option>
+      <option>2</option>
+    </select>
+    <small id="emailHelp" class="form-text text-muted">If you need more than 2, an Asset Request would need to be filled out.</small>
+      <button id="loanerNextButton3" class="btn btn-secondary">Next</button>
+</div>
+<div id="formBox5" style="display:none;">
+  <div class="form-group"style="margin-top:20px;">
+    <label for="exampleFormControlTextarea1">Comments or Requests</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="Comments"></textarea>
+  </div>
+<div>
+<button value="Cancel Request" onClick="window.location='http://localhost/test/';" class="btn btn-danger" type="button">Cancel Request</button>
+<input type="Submit" name="send" value="Submit Request" onclick="clearform();" class="btn btn-primary" type="button">
+</div>
+</div>
+</form>
+
+</div>
+
+<!-- Home Page -->
+  <script>
+$(document).ready(function(){
+    $("#startText").click(function(){
+        $("#IntroText").fadeIn("slow");
+        $("#header2").fadeIn();
+        $("#mainTitle2").fadeIn();
+        $("#header").hide("fast");
+        $("#mainTitle").hide("fast");
+        $("#div1").fadeIn("slow");
+        $("#stock").fadeIn("slow");
+        $("#div3").fadeIn("slow");
+        $("#startText").hide();
+    });
+});
+</script>
+
+
+
+
+
+<!-- Loaner Request is Selected "div1"  -->
+
+<script>
+$(document).ready(function(){
+  $("#div1").click(function(){
+      $("#div5").fadeIn("slow");
+      $("#loanerYes").fadeIn("slow");
+      $("#divNo").fadeIn();
+      $("#div1").hide();
+      $("#stock").hide();
+      $("#div3").hide();
+      $("#IntroText").hide();
+      $("#refreshDiv").fadeIn(1000);
+
+
+  });
+});
+</script>
+
+
+<!--Loaner Request Questions - Yes Response "loanerYes" -->
+
+<script>
+$(document).ready(function(){
+  $("#divNo").click(function(){
+    $("#loanerQuestion1").fadeIn();
+      $("#div7").fadeIn();
+      $("#loanerYes").hide();
+      $("#divNo").hide();
+      $("#div1").hide();
+      $("#stock").hide();
+      $("#div3").hide();
+      $("#div5").hide();
+      $("#IntroText").hide();
+      $("#refreshDiv").fadeIn(1000);
+
+
+  });
+});
+</script>
+
+<script>
+$(document).ready(function(){
+  $("#div7").click(function(){
+      $("#text-disclaimer01").fadeIn("slow");
+      $("#div7").fadeIn("slow");
+      $("#loanerYes").hide();
+      $("#divNo").hide();
+      $("#div1").hide();
+      $("#stock").hide();
+      $("#div3").hide();
+      $("#div5").hide();
+      $("#refreshDiv").fadeIn(1000);
+
+
+  });
+});
+</script>
+
+<!--- Loaner Request (Longer than two weeks)-->
+<script>
+$(document).ready(function(){
+  $("#loanerYes").click(function(){
+      $("#div8").fadeIn();
+      $("#text-disclaimerQ").fadeIn("slow");
+      $("#text-disclaimer02").fadeIn("slow");
+      $("#loanerYes").hide();
+      $("#div5").hide();
+      $("#div7").hide();
+      $("#divNo").hide();
+      $("#IntroText").hide();
+      $("#refreshDiv").fadeIn(2000);
+
+  });
+});
+</script>
+
+
+<!--Loaner Request Questions - Yes Response - Disclaimer Question "Got it" "loanerYes" -->
+
+<script>
+$(document).ready(function(){
+  $("#text-disclaimerQ").click(function(){
+      $("#LoanerPR").fadeIn("slow");
+      $("#text-disclaimer02").hide();
+      $("#text-disclaimerQ").hide();
+      $("#text-disclaimer01").hide();
+      $("#div5").hide();
+      $("#loanerYes").hide();
+      $("#div7").hide();
+      $("#div8").hide();
+      $("#IntroText").hide();
+      $("#refreshDiv").fadeIn(2000);
+
+  });
+});
+</script>
+<script>
+$(document).ready(function(){
+  $("#text-disclaimerQ2").click(function(){
+    $("#actionButton03").fadeIn();
+    $("#div9").hide();
+    $("#formBox").fadeIn();
+    $("#text-disclaimerQ2").hide();
+    $("#text-disclaimerQ").hide();
+    $("#text-disclaimer02").hide();
+  });
+});
+</script>
+
+
+<!--Loaner Request Questions - "No" Response -->
+
+<script>
+$(document).ready(function(){
+  $("#div7").click(function(){
+      $("#actionButton03").fadeIn();
+      $("#div9").fadeIn("slow");
+      $("#formBox").fadeIn();
+      $("#text-disclaimer03").fadeIn("slow");
+      $("#div1").hide();
+      $("#text-disclaimer01").hide();
+      $("#div7").hide();
+      $("#loanerYes").hide();
+      $("#div5").hide();
+      $("#refreshDiv").hide();
+
+
+  });
+});
+</script>
+<script>
+$(document).ready(function(){
+  $("#loanerNextButton0").click(function(){
+      $("#actionButton03").fadeIn();
+      $("#div9").fadeIn("slow");
+      $("#formBox").hide();
+      $("#formBox2").fadeIn();
+      $("#text-disclaimer03").fadeIn("slow");
+      $("#div1").hide();
+      $("#text-disclaimer01").hide();
+      $("#div7").hide();
+      $("#loanerYes").hide();
+      $("#div5").hide();
+      $("#refreshDiv").hide();
+
+
+  });
+});
+</script>
+
+<script>
+$(document).ready(function(){
+  $("#loanerNextButton1").click(function(){
+      $("#actionButton03").fadeIn();
+      $("#div9").fadeIn("slow");
+      $("#formBox").hide();
+      $("#formBox2").hide();
+      $("#formBox3").fadeIn();
+      $("#text-disclaimer03").fadeIn("slow");
+      $("#div1").hide();
+      $("#text-disclaimer01").hide();
+      $("#div7").hide();
+      $("#loanerYes").hide();
+      $("#div5").hide();
+      $("#refreshDiv").hide();
+
+
+  });
+});
+
+</script>
+<script>
+
+$(document).ready(function(){
+  $("#loanerNextButton2").click(function(){
+      $("#actionButton03").fadeIn();
+      $("#div9").fadeIn("slow");
+      $("#formBox").hide();
+      $("#formBox2").hide();
+      $("#formBox3").hide();
+      $("#formBox4").fadeIn();
+      $("#text-disclaimer03").fadeIn("slow");
+      $("#div1").hide();
+      $("#text-disclaimer01").hide();
+      $("#div7").hide();
+      $("#loanerYes").hide();
+      $("#div5").hide();
+      $("#refreshDiv").hide();
+
+
+  });
+});
+</script>
+
+
+
+
+<script>
+$(document).ready(function(){
+  $("#div3").click(function(){
+      $("#walkupAssistanceQuestions").fadeIn("slow");
+      $("#div1").hide();
+      $("#stock").hide();
+      $("#div3").hide();
+      $("#refreshDiv").fadeIn(2000);
+      $("#IntroText").hide();
+
+  });
+});
+</script>
+
+<script>
+$(document).ready(function(){
+  $("#walkUpAssistanceNextButton0").click(function(){
+      $("#walkup1").fadeIn("slow");
+      $("#div3").hide();
+      $("#IntroText").hide();
+      $("#walkup0").hide();
+
+
+  });
+});
+</script>
+
+<script>
+$(document).ready(function(){
+  $("#walkUpAssistanceNextButton1").click(function(){
+      $("#walkup2").fadeIn("slow");
+      $("#div3").hide();
+      $("#refreshDiv").fadeIn(2000);
+      $("#IntroText").hide();
+      $("#walkup1").hide();
+      $("#walkup0").hide();
+
+  });
+});
+</script>
+
+
+<script>
+$(document).ready(function(){
+  $("#walkupAssistanceButton").click(function(){
+    $("#walkup0").fadeIn();
+      $("#walkupAssistanceQuestions").hide();
+      $("#IntroText").hide();
+  });
+});
+</script>
+
+
+<script>
+function dropdown1(){
+  var x = document.getElementById("adapterItems");
+  if (x.style.display === "none"){
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+
+}
+</script>
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+
+
+</body>
